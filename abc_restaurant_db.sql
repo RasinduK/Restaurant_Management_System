@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Sep 10, 2024 at 05:23 PM
+=======
+-- Generation Time: Sep 10, 2024 at 03:08 AM
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +28,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `content`
 --
 
@@ -46,6 +51,8 @@ INSERT INTO `content` (`id`, `title`, `content`, `category`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- Table structure for table `facilities`
 --
 
@@ -58,6 +65,7 @@ CREATE TABLE `facilities` (
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `menu`
 --
 
@@ -80,6 +88,8 @@ INSERT INTO `menu` (`id`, `name`, `price`, `description`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- Table structure for table `queries`
 --
 
@@ -111,8 +121,12 @@ CREATE TABLE `reservations` (
 INSERT INTO `reservations` (`reservation_id`, `customer_id`, `reservation_date`, `type`, `status`) VALUES
 (1, 1, '2024-09-09 04:43:00', 'dine-in', 'pending'),
 (2, 2, '2024-09-04 04:44:00', 'delivery', 'pending'),
+<<<<<<< HEAD
 (3, 2, '2024-09-10 05:03:00', 'dine-in', 'pending'),
 (4, 2, '2024-09-12 20:29:00', 'dine-in', 'pending');
+=======
+(3, 2, '2024-09-10 05:03:00', 'dine-in', 'pending');
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 
 -- --------------------------------------------------------
 
@@ -137,7 +151,10 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+<<<<<<< HEAD
   `email` varchar(50) NOT NULL,
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
   `role` enum('admin','staff','customer') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -145,6 +162,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
+<<<<<<< HEAD
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `role`) VALUES
 (1, 'admin', 'qqqq', '', 'customer'),
 (2, 'rasindu2002', '1234', '', 'admin'),
@@ -152,30 +170,42 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `role`) VALUES
 (5, 'qwrr', '1234', 'qwas@gmaw.bd', 'admin'),
 (6, 'asdfgsssss', 'asdfghgggg', 'Weee@gsdfgh.com', 'admin'),
 (7, 'ewww', '1234', 'kauss@gmail.com', 'admin');
+=======
+INSERT INTO `users` (`user_id`, `username`, `password`, `role`) VALUES
+(1, 'admin', 'qqqq', 'customer'),
+(2, 'rasindu2002', '1234', 'admin'),
+(3, 'koshi', '1234', 'staff');
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 
 --
 -- Indexes for dumped tables
 --
 
 --
+<<<<<<< HEAD
 -- Indexes for table `content`
 --
 ALTER TABLE `content`
   ADD PRIMARY KEY (`id`);
 
 --
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- Indexes for table `facilities`
 --
 ALTER TABLE `facilities`
   ADD PRIMARY KEY (`facility_id`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- Indexes for table `queries`
 --
 ALTER TABLE `queries`
@@ -207,24 +237,30 @@ ALTER TABLE `users`
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `content`
 --
 ALTER TABLE `content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- AUTO_INCREMENT for table `facilities`
 --
 ALTER TABLE `facilities`
   MODIFY `facility_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+=======
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 -- AUTO_INCREMENT for table `queries`
 --
 ALTER TABLE `queries`
@@ -234,7 +270,11 @@ ALTER TABLE `queries`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
+<<<<<<< HEAD
   MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+=======
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -246,7 +286,11 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+=======
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 74a50f0d9bd3dc0f087ffa2122cc6f962c73ccb1
 
 --
 -- Constraints for dumped tables
