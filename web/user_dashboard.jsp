@@ -123,10 +123,11 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.jsp">Home</a></li>
+                <li><a href="user_dashboard.jsp">Home</a></li>
                 <li><a href="services.jsp">Services</a></li>
                 <li><a href="view_menu.jsp">Menu</a></li>
-                <li><a href="login.jsp">Login</a></li>
+                <li><a href="reservation.jsp">Make a Reservation</a></li>
+               <li><a href="LogoutServlet">Logout</a></li>
             </ul>
         </nav>
     </header>

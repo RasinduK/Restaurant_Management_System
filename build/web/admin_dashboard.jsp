@@ -1,102 +1,171 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC Restaurant - Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         header {
             background-color: #343a40;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
+            margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 20px;
+            display: inline-block;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #495057;
+            color: #e9ecef;
         }
 
         main {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-            margin: 20px;
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 20px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #212529;
         }
 
         section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 15px;
         }
 
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
             text-align: left;
         }
 
-        th {
-            background-color: #f2f2f2;
+        table th {
+            background-color: #f1f1f1;
+            font-weight: 600;
         }
 
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #e9ecef;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Footer Styles */
         footer {
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            color: #666;
+            padding: 15px;
+            background-color: #ffffff;
+            border-top: 1px solid #dee2e6;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            table th, table td {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Admin Dashboard</h1>
         <nav>
             <ul>
                 <li><a href="admin_dashboard.jsp">Dashboard</a></li>
-                <li><a href="user_management.jsp">User Management</a></li>
-                <li><a href="content_management.jsp">Content Management</a></li>
-                <li><a href="reports.jsp">Reports</a></li>
-                <li><a href="settings.jsp">Settings</a></li>
+                <li><a href="LogoutServlet">Logout</a></li>
             </ul>
         </nav>
     </header>
+      <h1>Admin DashBoard</h1>
     <main>
         <section>
             <h2>Overview</h2>
             <p>Welcome to the admin dashboard. Here you can manage users, content, view reports, and adjust system settings.</p>
         </section>
         
-        <section>
-            <h2>Recent Activities</h2>
-            <!-- Display recent activities or logs -->
-        </section>
-
         <section>
             <h2>User Management</h2>
             <a href="add_user.jsp">Add New User</a>
@@ -110,16 +179,17 @@
         </section>
 
         <section>
-            <h2>Reports</h2>
-            <a href="generate_report.jsp">Generate Report</a>
-            <!-- Display report options or tables here -->
+            <h2>Menu</h2>
+            <a href="add_menuitem.jsp">Add Items</a>
+            <!-- Display menu items here -->
         </section>
 
         <section>
-            <h2>Settings</h2>
-            <!-- Display settings options here -->
+            <h2>Reservations</h2>
+            <a href="view_reservation.jsp">View Reservations</a>
         </section>
     </main>
+    
     <footer>
         <p>&copy; 2024 ABC Restaurant. All rights reserved.</p>
     </footer>

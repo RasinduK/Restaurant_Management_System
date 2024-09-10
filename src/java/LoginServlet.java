@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
                         } else if (role.equals("staff")) {
                             response.sendRedirect("staff_dashboard.jsp");
                         } else {
-                            response.sendRedirect("index.jsp");
+                            response.sendRedirect("user_dashboard.jsp");
                         }
                     } else {
                         response.sendRedirect("login.jsp?error=Invalid credentials");

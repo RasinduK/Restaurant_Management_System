@@ -67,8 +67,14 @@
 </head>
 <body>
     <header>
-        <h1>Add New User</h1>
+                <nav>
+            <ul>
+                <li><a href="admin_dashboard.jsp">Dashboard</a></li>
+                <li><a href="LogoutServlet">Logout</a></li>
+            </ul>
+        </nav>
     </header>
+            <h1>Add New User</h1>
     <main>
         <form action="AddUserServlet" method="post">
             <label for="username">Username:</label>

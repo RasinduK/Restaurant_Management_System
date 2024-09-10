@@ -1,3 +1,4 @@
+<%@ page import="java.sql.Connection, java.sql.DriverManager, java.sql.ResultSet, java.sql.Statement" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,10 +89,7 @@
         <nav>
             <ul>
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="services.jsp">Services</a></li>
-                <li><a href="search.jsp">Search</a></li>
-                <li><a href="reservation.jsp">Make a Reservation</a></li>
-                <li><a href="login.jsp">Login</a></li>
+                <li><a href="view_menu.jsp">Menu</a></li>
             </ul>
         </nav>
     </header>
@@ -102,33 +100,42 @@
         <p>At ABC Restaurant, we offer a wide range of services to meet your dining and event needs. Explore our services below and see how we can make your next meal or event unforgettable.</p>
 
         <div class="services-container">
-            <!-- Service 1: Dine-in Service -->
-            <div class="service-box">
-                <img src="images/dine-in.jpeg" alt="Dine-in Service">
-                <h3>Dine-in Service</h3>
-                <p>Experience our exceptional dining atmosphere with a wide variety of cuisines to satisfy your taste buds.</p>
-            </div>
+            <% 
+                // Database connection setup
+                Connection conn = null;
+                Statement stmt = null;
+                ResultSet rs = null;
 
-            <!-- Service 2: Takeaway Service -->
-            <div class="service-box">
-                <img src="images/takeaway.jpeg" alt="Takeaway Service">
-                <h3>Takeaway Service</h3>
-                <p>Order your favorite meals to-go and enjoy them from the comfort of your home or office.</p>
-            </div>
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_restaurant_db", "root", "");
+                    stmt = conn.createStatement();
+                    String sql = "SELECT * FROM content WHERE category='services'";
+                    rs = stmt.executeQuery(sql);
 
-            <!-- Service 3: Event Catering -->
-            <div class="service-box">
-                <img src="images/catering.jpeg" alt="Event Catering">
-                <h3>Event Catering</h3>
-                <p>From intimate gatherings to large events, our catering services provide delicious food and professional service.</p>
-            </div>
+                    // Loop through the result set and display each service
+                    while (rs.next()) {
+                        String title = rs.getString("title");
+                        String content = rs.getString("content");
+                        String image = rs.getString("image");
 
-            <!-- Service 4: Delivery Service -->
+                        // Display the content dynamically
+            %>
             <div class="service-box">
-                <img src="images/delivery.jpeg" alt="Delivery Service">
-                <h3>Delivery Service</h3>
-                <p>Enjoy our dishes delivered straight to your door with our fast and reliable delivery service.</p>
+                <img src="<%= image %>" alt="<%= title %>">
+                <h3><%= title %></h3>
+                <p><%= content %></p>
             </div>
+            <% 
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    if (rs != null) try { rs.close(); } catch (Exception e) { }
+                    if (stmt != null) try { stmt.close(); } catch (Exception e) { }
+                    if (conn != null) try { conn.close(); } catch (Exception e) { }
+                }
+            %>
         </div>
     </main>
 

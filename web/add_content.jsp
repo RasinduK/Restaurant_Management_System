@@ -6,7 +6,7 @@
     <title>ABC Restaurant - Add Content</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             margin: 0;
@@ -29,7 +29,7 @@
         }
 
         form {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -38,16 +38,12 @@
             margin: 10px 0 5px;
         }
 
-        input, textarea, select, button {
+        input, select, button {
             width: 100%;
             padding: 10px;
             margin: 5px 0 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
-        }
-
-        textarea {
-            resize: vertical;
         }
 
         button {
@@ -67,13 +63,44 @@
             margin-top: 20px;
             color: #666;
         }
+        .success-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Add New Content</h1>
+                        <nav>
+            <ul>
+                <li><a href="admin_dashboard.jsp">Dashboard</a></li>
+                <li><a href="LogoutServlet">Logout</a></li>
+            </ul>
+        </nav>
     </header>
+    <h1>Add New Content</h1>
     <main>
+        <!-- Display success or error messages -->
+        <div class="success-message">
+            <% if (request.getAttribute("successMessage") != null) { %>
+                <%= request.getAttribute("successMessage") %>
+            <% } %>
+        </div>
+        <div class="error-message">
+            <% if (request.getAttribute("errorMessage") != null) { %>
+                <%= request.getAttribute("errorMessage") %>
+            <% } %>
+        </div>
+
         <form action="AddContentServlet" method="post">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>

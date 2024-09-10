@@ -125,8 +125,7 @@
             <ul>
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="services.jsp">Services</a></li>
-                <li><a href="search.jsp">Search</a></li>
-                <li><a href="reservation.jsp">Make a Reservation</a></li>
+                <li><a href="view_menu.jsp">Menu</a></li>
                 <li><a href="login.jsp">Login</a></li>
             </ul>
         </nav>
@@ -174,17 +173,17 @@
             <div class="gallery">
                 <!-- Sample Gallery Image 1 -->
                 <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Gallery 1">
+                    <img src="images/gallery1.jpeg" alt="Gallery 1">
                 </div>
 
                 <!-- Sample Gallery Image 2 -->
                 <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Gallery 2">
+                    <img src="images/gallery2.jpeg" alt="Gallery 2">
                 </div>
 
                 <!-- Sample Gallery Image 3 -->
                 <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Gallery 3">
+                    <img src="images/gallery3.jpeg" alt="Gallery 3">
                 </div>
             </div>
         </section>
