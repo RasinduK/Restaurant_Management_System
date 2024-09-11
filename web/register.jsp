@@ -102,22 +102,34 @@
 
         <h1>Register</h1>
     <main>
-        <form action="RegisterServlet" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <label for="role">Role:</label>
-            <select id="role" name="role" required>
-                <option value="customer">Customer</option>
-                <option value="admin">Admin</option>
-                <option value="staff">Staff</option>
-            </select>
-            
-            <button type="submit">Register</button>
-        </form>
+ <form action="RegisterServlet" method="post">
+    <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+
+    <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+
+    <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="input-group">
+        <label for="role">Role</label>
+        <select id="role" name="role" required>
+            <option value="customer">Customer</option>
+            <option value="admin">Admin</option>
+            <option value="staff">Staff</option>
+        </select>
+    </div>
+
+    <button type="submit">Register</button>
+</form>
+      
         <a href="login.jsp">Already have an account? Login here.</a>
     </main>
 
